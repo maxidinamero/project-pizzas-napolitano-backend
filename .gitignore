@@ -1,0 +1,10 @@
+# Ignorar carpetas de recursos
+/resources/
+# Ignorar documentación PDF
+docs/
+# Ignorar archivos de sistema de Mac
+.DS_Store
+# Ignorar la carpeta oculta de configuración de VSCode
+.vscode/
+# Ignorar archivos zip
+*.zip
