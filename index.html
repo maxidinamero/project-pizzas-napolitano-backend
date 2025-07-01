@@ -52,7 +52,7 @@
                                 <time>23/06/2025</time>
                             </figcaption>
                         </figure>
-                        <button class="button" value="1"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
+                        <button class="button" value="1" data-price="10000"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
                     </div>
                 </li> 
                 <li>
@@ -65,7 +65,7 @@
                                 <time>23/06/2025</time>
                             </figcaption>
                         </figure>
-                        <button class="button" value="2"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
+                        <button class="button" value="2" data-price="14500"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
                     </div>
                 </li>
                 <li>
@@ -78,7 +78,7 @@
                                 <time>23/06/2025</time>
                             </figcaption>
                         </figure>
-                        <button class="button" value="3"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
+                        <button class="button" value="3" data-price="15000"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
                     </div>
                 </li>
                 <li>
@@ -91,7 +91,7 @@
                                 <time>23/06/2025</time>
                             </figcaption>
                         </figure>
-                        <button class="button" value="4"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
+                        <button class="button" value="4" data-price="11000"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
                     </div>
                 </li>
                 <li>
@@ -104,7 +104,7 @@
                                 <time>23/06/2025</time>
                             </figcaption>
                         </figure>
-                        <button class="button" value="5"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
+                        <button class="button" value="5" data-price="12500"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
                     </div>
                 </li>
                 <li>
@@ -117,7 +117,7 @@
                                 <time>23/06/2025</time>
                             </figcaption>
                         </figure>
-                        <button class="button" value="6"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
+                        <button class="button" value="6" data-price="13000"> Añadir al carrito <i class="fa-solid fa-cart-shopping"> </i> </button>
                     </div>
                 </li>
             </ul>
@@ -150,7 +150,39 @@
                             </p>
                         </div>
                     </footer>
+                    <script>
+                    const countButtons=document.querySelectorAll("button").length;
+                    let products=[];
+                    let totalPrice = 0;
+
+
+                    for(let i=0;i<countButtons;i++){
+                    document.querySelectorAll("button")[i].addEventListener("click",showValue);
+                    }
+
+                    function showValue(){
+                    // Se hizo un click sobre el Button para comprar una Pizza//
+                    const price=parseFloat(this.getAttribute("data-price"))
+                    if (products.includes(this.value)){
+                    // Si el producto ya está en el arreglo, no tendria que seleccionar el mismo producto.
+                    return;
+                    }
+                    else{
+                    // Cambiar color a Rojo
+                    this.style.backgroundColor = "#e50c39";
+                    this.innerHTML=`Agregado <i class="fa-solid fa-cart-shopping"></i>`; //this hace referencia la botton "agregar al carrito"
+                    products.push(this.value);
+
+                    console.log(products);
+                    totalPrice=totalPrice+price;
+                    console.log("Total : "+totalPrice);
+
+                    document.getElementById("badge").setAttribute("value",products.length)
+
+
+                    }
+                    }
+                    </script>
                 </div>    
-        <script src="js/main.js"></script>
     </body>
 </html>
