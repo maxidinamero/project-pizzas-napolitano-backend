@@ -22,10 +22,10 @@
                 <nav>
                     <div>
                         <ul>
-                            <li><a href="index.html">HOME</a></li>
-                            <li><a href="nosotros.html">NOSOTROS</a></li>
-                            <li><a href="sucursales.html">SUCURSALES & DELIVERY</a></li>
-                            <li><a href="contacto.html">CONTACTO</a></li>
+                            <li><a href="./index.html">HOME</a></li>
+                            <li><a href="./pages/nosotros.html">NOSOTROS</a></li>
+                            <li><a href="./pages/sucursales.html">SUCURSALES & DELIVERY</a></li>
+                            <li><a href="./pages/contacto.html">CONTACTO</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -34,6 +34,9 @@
         <div class="main-content">
             <!-- https://animate.style/ -->
             <h2 class="animate__animated animate__backInLeft">NUESTRAS PIZZAS</h2>
+        </div>
+        <div id="subtotal" style="display:none">
+           <p>El precio total es de : <span id="totalamount" value="0"></span></p> 
         </div>
         <!-- https://fontawesome.com/search?ic=free -->
         <div id="cart">
@@ -131,6 +134,7 @@
                                 <li><a href="#">Sucursales & Delivery</a></li>
                                 <li><a href="#">Contacto</a></li>
                                 <li><a href="#">Política de Privacidad</a></li>
+                                <li><a href="login.html">Login</a></li>
                             </ul>
                         </div>
                         <div>
@@ -178,8 +182,9 @@
                     console.log("Total : "+totalPrice);
 
                     document.getElementById("badge").setAttribute("value",products.length)
-
-
+                    
+                    document.getElementById("subtotal").style.display = "block";
+                    document.getElementById("totalamount").textContent = totalPrice;
                     }
                     }
                     </script>

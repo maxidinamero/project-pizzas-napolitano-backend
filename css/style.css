@@ -8,8 +8,11 @@ html {
 
 body {
     background-color: #fff;
-    font-size: 16px;
+    font-family: "Lato", sans-serif;
+    background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 35%, rgba(0, 212, 255, 1) 100%);
 }
+
 
 #header-container {
     display: flex;
@@ -50,7 +53,7 @@ nav ul li a:hover {
     border-radius: 0.9rem;
 }
 
-.main-content h2{
+.main-content h2 {
     display: flex;
     justify-content: center;
     font-size: 2.5rem;
@@ -60,210 +63,246 @@ nav ul li a:hover {
 }
 
 #cart {
-        display: flex;
-        justify-content: end;
+    display: flex;
+    justify-content: end;
+}
+
+.badge:after {
+    font-family: "Oswald", sans-serif;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #fff;
+    background: red;
+    border-radius: 50%;
+    padding: 6px 8px;
+    content: attr(value);
+    position: relative;
+    left: -10px;
+    top: -20px;
+    opacity: 0.9;
+}
+
+#subtotal {
+    display: none;
+    font-family: "Oswald", sans-serif;
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0px 5px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    font-family: "Work Sans", sans-serif;
+}
+
+.gallery li {
+    display: flex;
+    /*  Para que las columnas tengan la misma altura. */
+    box-sizing: border-box;
+    list-style: none;
+    width: calc(100% / 3);
+    /* 33.33% */
+    padding: 10px;
+}
+
+
+/* Cambiamos el tamaño para que se pueda mostrar en el main. */
+figure img {
+    width: 33.75rem;
+    height: 23.375rem;
+}
+
+.gallery li .box {
+    padding: 6px 6px 30px 6px;
+    border: 2px solid #e1e8ee;
+}
+
+.gallery li .box img {
+    width: 100%;
+    /* Imagenes responsivas */
+    max-width: 100%;
+    /* Imagenes responsivas */
+    height: auto;
+    margin-bottom: 6px;
+    justify-content: center;
+}
+
+.gallery li .box h3 {
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #17181a;
+    letter-spacing: 2px;
+    height: 10vh;
+}
+
+.gallery li .box h3 {
+    margin-bottom: 6px;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: bold;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #17181a;
+    letter-spacing: 2px;
+    height: 10vh;
+}
+
+.gallery li .box p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #135D76
+}
+
+.gallery li .box time {
+    display: flex;
+    justify-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1a5b5e;
+}
+
+.gallery li .box .button {
+    margin-top: 5px;
+    width: 100%;
+    padding: 7px;
+    border: none;
+    background: #0D7139;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    font-family: "Work Sans", sans-serif;
+}
+
+footer {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 40px 20px 20px 20px;
+    font-family: "Oswald", sans-serif;
+    border-top: 1px solid #e1e8ee;
+    margin-top: 40px;
+}
+
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.footer-nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-nav ul li {
+    margin: 0 15px;
+}
+
+.footer-nav ul li a {
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-nav);
+}
+
+.footer-nav ul li a:hover {
+    color: #e50c39;
+}
+
+.footer-social {
+
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+}
+
+.footer-social i {
+    margin: 0 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--color-nav);
+}
+
+.footer-social i:hover {
+    color: #e50c39;
+}
+
+
+.footer-copyright {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    border-top: 1px solid #e1e8ee;
+    padding-top: 20px;
+}
+
+.form-signin {
+    width: 100%;
+    max-width: 380px;
+    background-color: #fff;
+    border: none;
+    padding: 15px 35px 45px 35px;
+}
+
+.form-signin-heading {
+    margin-bottom: 30px;
+}
+
+form input [type="text"] {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+form input [type="password"] {
+    border-top-left-radius: 0;  
+    border-top-right-radius: 0;
+}
+
+#errorMessages{
+    text-align: center;
+    color:#d1001f;
+    font-size:0.8rem;
+  } 
+
+@media (max-width: 960px) {
+
+    #header-container {
+        flex-direction: column;
     }
 
-    .badge:after{
-        font-family: "Oswald", sans-serif;
-        font-size: 0.75rem;
-        font-weight: bold;
-        color: #fff;
-        background: red;
-        border-radius: 50%;
-        padding: 6px 8px;
-        content: attr(value);  /*aplica contenido dinamico al elemento*/
-        position: relative;
-        left: -10px;
-        top: -20px;
-        opacity: 0.9;  /*para diferenciar un icono del otro porque estan encimados*/
+    #header-container #logo {
+        display: flex;
+        flex-direction: column;
     }
 
     .gallery {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        font-family: "Work Sans", sans-serif;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 60px;
     }
-    
-    .gallery li {
-        display: flex;
-        /*  Para que las columnas tengan la misma altura. */
-        box-sizing: border-box;
-        list-style: none;
-        width: calc(100% / 3);
-        /* 33.33% */
-        padding: 10px;
-    }
-    
-    
-    /* Cambiamos el tamaño para que se pueda mostrar en el main. */
-    figure img {
-        width: 33.75rem;
-        height: 23.375rem;
-    }
-    
-    .gallery li .box {
-        padding: 6px 6px 30px 6px;
-        border: 2px solid #e1e8ee;
-    }
-    
-    .gallery li .box img {
+
+    .img-pizzas {
+
         width: 100%;
         /* Imagenes responsivas */
         max-width: 100%;
         /* Imagenes responsivas */
         height: auto;
-        margin-bottom: 6px;
-        justify-content: center;
+
     }
-    
-    .gallery li .box h3 {
-        margin-bottom: 6px;
-        text-align: center;
-        font-size: 1.125rem;
-        font-weight: bold;
-        line-height: 100%;
-        text-transform: uppercase;
-        color: #17181a;
-        letter-spacing: 2px;
-        height: 10vh;
-    }
-    
-    .gallery li .box h3 {
-        margin-bottom: 6px;
-        text-align: center;
-        font-size: 1.125rem;
-        font-weight: bold;
-        line-height: 100%;
-        text-transform: uppercase;
-        color: #17181a;
-        letter-spacing: 2px;
-        height: 10vh;
-    }
-    
-    .gallery li .box p {
-        text-align: center;
-        font-size: 2rem;
-        font-weight: bold;
-        color: #135D76
-    }
-    
-    .gallery li .box time {
-        display: flex;
-        justify-content: center;
-        font-size: 1rem;
-        font-weight: bold;
-        color: #1a5b5e;
-    }
-    
-    .gallery li .box .button {
-        margin-top: 5px;
-        width: 100%;
-        padding: 7px;
-        border: none;
-        background: #0D7139;
-        border-radius: 20px;
-        cursor: pointer;
-        font-size: 1.25rem;
-        font-weight: 600;
-        color: #fff;
-        font-family: "Work Sans", sans-serif;
-    }
-    
-    footer {
-        text-align: center;
-        background-color: #f8f9fa;
-        padding: 40px 20px 20px 20px;
-        font-family: "Oswald", sans-serif;
-        border-top: 1px solid #e1e8ee;
-        margin-top: 40px;
-    }
-    
-    
-    .footer-nav {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-    
-    .footer-nav ul {
-        display: flex;
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .footer-nav ul li {
-        margin: 0 15px;
-    }
-    
-    .footer-nav ul li a {
-        text-decoration: none;
-        font-size: 1rem;
-        font-weight: 500;
-        color: var(--color-nav);
-    }
-    
-    .footer-nav ul li a:hover {
-        color: #e50c39;
-    }
-    
-    .footer-social {
-    
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-    
-    }
-    
-    .footer-social i {
-        margin: 0 10px;
-        font-size: 1.5rem;
-        cursor: pointer;
-        color: var(--color-nav);
-    }
-    
-    .footer-social i:hover {
-        color: #e50c39;
-    }
-    
-    
-    .footer-copyright {
-        text-align: center;
-        font-size: 0.9rem;
-        color: #666;
-        border-top: 1px solid #e1e8ee;
-        padding-top: 20px;
-    }
-    
-    @media (max-width: 960px) {
-    
-        #header-container {
-            flex-direction: column;
-        }
-    
-        #header-container #logo {
-            display: flex;
-            flex-direction: column;
-        }
-    
-        .gallery {
-            flex-direction: column;
-            align-items: center;
-            margin-top: 60px;
-        }
-    
-        .img-pizzas {
-    
-            width: 100%;
-            /* Imagenes responsivas */
-            max-width: 100%;
-            /* Imagenes responsivas */
-            height: auto;
-    
-        }
-    }
-    
+}

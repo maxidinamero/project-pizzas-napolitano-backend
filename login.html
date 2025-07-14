@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="d-flex align-items-center justify-content-center vh-100">
+        <form accept-charset="utf-8" method="POST" action="" class="form-signin">
+            <h2 class="form-signin-heading">USUARIO</h2>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Usuario o email" required
+                autofocus />
+            <br />
+            <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"
+                required />
+            <br />
+            <div id="errorMessages"></div>
+            <br />
+            <div class="text-center">
+                <button class="btn btn-primary btn-lg btn-block" id="login" type="submit">
+                    Login
+                </button>
+            </div>
+        </form>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+    <script>
+        const username = document.getElementById("username");
+        const pass = document.getElementById("password");
+        const btn = document.getElementById("login");
+        const errorMessages = document.getElementById("errorMessages");
+        function displayError(message) {
+            errorMessages.innerHTML = message;
+        }
+        btn.addEventListener("click", (e) => {
+            const passValue = document.getElementById("password").value;
+            const userValue = document.getElementById("username").value;
+            const data = {
+                username: userValue,
+                password: passValue
+            }
+            e.preventDefault();
+            if (passValue.length < 6) {
+                e.preventDefault();
+                displayError("La contraseña debe tener como minimo 6 caracteres de longitud.");
+            }
+            if (userValue == "" || passValue == "") {
+                e.preventDefault();
+                displayError("Todos los campos son requeridos");
+            }
+            console.log(data);
+            console.log(JSON.stringify(data));
+        });
+    </script>
+</body>
+
+</html>
