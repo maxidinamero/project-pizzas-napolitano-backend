@@ -1,10 +1,32 @@
-# Ignorar carpetas de recursos
-/resources/
-# Ignorar documentación PDF
-docs/
-# Ignorar archivos de sistema de Mac
+# Ignorar archivos temporales del sistema
 .DS_Store
-# Ignorar la carpeta oculta de configuración de VSCode
-.vscode/
-# Ignorar archivos zip
-*.zip
+Thumbs.db
+
+# Ignorar dependencias
+node_modules/
+vendor/
+
+# Ignorar logs y temporales
+*.log
+*.tmp
+
+# Ignorar frontend
+*.html
+*.css
+*.js
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.svg
+css/
+js/
+img/
+pages/
+docs/
+resources/
+readme
+README.md
+
+# Ignorar base de datos
+sql/
