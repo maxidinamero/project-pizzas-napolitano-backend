@@ -1,32 +1,9 @@
-# Ignorar archivos temporales del sistema
-.DS_Store
-Thumbs.db
+# No ignorar este archivo
+!.gitignore
 
-# Ignorar dependencias
-node_modules/
-vendor/
+# Ignorar todo por defecto
+*
 
-# Ignorar logs y temporales
-*.log
-*.tmp
+# Permitir solo archivos PHP
+!*.php
 
-# Ignorar frontend
-*.html
-*.css
-*.js
-*.png
-*.jpg
-*.jpeg
-*.gif
-*.svg
-css/
-js/
-img/
-pages/
-docs/
-resources/
-readme
-README.md
-
-# Ignorar base de datos
-sql/
