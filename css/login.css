@@ -1,0 +1,33 @@
+body{
+    font-family: "Lato", sans-serif;
+    background: #020024;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(9, 9, 121, 1) 50%, rgba(0, 212, 255, 1) 100%);
+}
+
+.form-signin{
+    width: 100%;
+    max-width: 380px;
+    background-color: #fff;
+    border: none;
+    padding: 15px 35px 45px 35px;
+}
+
+.form-signin-heading {
+    margin-bottom: 30px;
+}
+
+input [type="text"] {
+ border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+input [type="password"] {
+ border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+#errorMessages{
+    text-align: center;
+    color:#d1001f;
+    font-size:0.8rem;
+}
