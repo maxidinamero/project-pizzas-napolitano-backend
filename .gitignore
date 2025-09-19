@@ -1,21 +1,8 @@
 # No ignorar este archivo
 !.gitignore
 
-# Ignorar carpetas de recursos
-/resources/
+# Ignorar todo por defecto
+*
 
-# Ignorar documentación PDF
-docs/
-
-# Ignorar archivos de sistema de Mac
-.DS_Store
-
-# Ignorar la carpeta oculta de configuración de VSCode
-.vscode/
-
-# Ignorar archivos zip
-*.zip
-
-# --- Ignorar backend en frontend ---
-*.php
-*.sql
+# Permitir solo archivos PHP
+!*.php
